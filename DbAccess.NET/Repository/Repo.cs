@@ -133,7 +133,7 @@ namespace DatabaseAccess.Repository
             var properties = entity.GetType().GetProperties();
 
             return properties.Select(property =>
-                    KeyValuePair.Create(property.Name, property.GetValue(entity)));
+                    new KeyValuePair<string, object>(property.Name, property.GetValue(entity)));           
         }
     }
 }
